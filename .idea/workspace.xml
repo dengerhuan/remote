@@ -2,37 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d279672-0b53-45f8-8593-5ae94be89ce8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/base/authz/db.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/authz/register.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/crypto/crypt.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/exception/exception.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/instance/bizlogic.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/instance/logicgroup.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/instance/poi.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/instance/rdinstance.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/instance/rdinstancemanager.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/protoc/cmdhandler.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/protoc/context.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/protoc/erd.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/protoc/interface.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/protoc/operationcmdfactory.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/protoc/srd.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/protoc/timecmdfactory.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/protoc/usercmdfactory.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/tools/device.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/base" beforeDir="false" afterPath="$PROJECT_DIR$/base/base" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/base/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/base/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/base/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/msg/CMDHandler.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/msg/Cmd.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/msg/CmdFactory.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/msg/msg.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/netty/transport/udp/factory.go" beforeDir="false" afterPath="$PROJECT_DIR$/base/netty/transport/udp/factory.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/rpc/udp.go" beforeDir="false" afterPath="$PROJECT_DIR$/base/rpc/udp.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/rpc/udp_test.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/session/session.go" beforeDir="false" afterPath="$PROJECT_DIR$/base/session/session.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/time/ntp.go" beforeDir="false" afterPath="$PROJECT_DIR$/base/time/ntp.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +20,7 @@
   </component>
   <component name="GOROOT" path="/usr/local/Cellar/go/1.13.4/libexec" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/base" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
@@ -153,22 +125,22 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="320" y="128" key="#Go_Modules_(vgo)/0.23.1440.877@0.23.1440.877" timestamp="1600319786676" />
-    <state width="1398" height="201" key="GridCell.Tab.0.bottom" timestamp="1600692707089">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1600741895659">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="201" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1600692707089" />
-    <state width="1398" height="201" key="GridCell.Tab.0.center" timestamp="1600692707087">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1600741895659" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1600741895658">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="201" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1600692707087" />
-    <state width="1398" height="201" key="GridCell.Tab.0.left" timestamp="1600692707087">
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1600741895658" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1600741895658">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="201" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1600692707087" />
-    <state width="1398" height="201" key="GridCell.Tab.0.right" timestamp="1600692707088">
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1600741895658" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1600741895659">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="201" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1600692707088" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1600741895659" />
     <state x="402" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1600416184798">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
