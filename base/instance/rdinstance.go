@@ -117,7 +117,7 @@ func (r *rdInstance) SetCockpit(cockpitId string) error {
 	if !logic.ChannelValid() {
 		return errors.New("rpc nor ok")
 	}
-	//r.Cockpit = logic
+
 	r.CockpitId = logic.id
 	return nil
 }
@@ -133,8 +133,6 @@ func (r *rdInstance) SetVehicle(vid string) error {
 	if !logic.ChannelValid() {
 		return errors.New("rpc nor ok")
 	}
-
-	//r.Vehicle = logic
 	r.VehicleId = logic.id
 	return nil
 }
@@ -167,7 +165,6 @@ func (r *rdInstance) Start() {
 	r.Cockpit = cockpit
 
 	if err != nil {
-
 		r.Vehicle.vg = append(r.Vehicle.vg, r.Cockpit)
 	} else {
 		r.Console = console
@@ -175,24 +172,18 @@ func (r *rdInstance) Start() {
 	}
 
 	r.Cockpit.vg = append(r.Cockpit.vg, r.Vehicle)
-
-	// set state in use
 	r.Vehicle.SetState(2)
 	r.Cockpit.SetState(2)
+
 }
 func (r *rdInstance) Stop() {
 
-	if !r.State {
-		return
-	}
+	log.Println("stop instance ")
+
+	VehicleGroup.ReleaseOne(r.VehicleId)
+	CockpitGroup.ReleaseOne(r.CockpitId)
 
 	r.State = false
-
-	r.Vehicle.Unlock()
-	r.Cockpit.Unlock()
-
-	r.Vehicle.vg = make([]*RdLogic, 0)
-	r.Cockpit.vg = make([]*RdLogic, 0)
 
 	r.Cancelled = true
 	r.CancerCode = 222
@@ -209,7 +200,6 @@ func (r *rdInstance) Cancer(cancerId int) {
 func getConsole() (*RdLogic, error) {
 
 	// status 0 unlock  1 lock  2 working
-
 	rd, ok := ConsoleGroup.list["001"]
 	if ok {
 		return rd, nil

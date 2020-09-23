@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/go-netty/go-netty"
 	"gw/authz"
+	"log"
 )
 
 // domain user=2
@@ -59,6 +60,7 @@ func (userRegisterResponse) Execute(ctx netty.InboundContext, message netty.Mess
 			tmpId := string(msg[21 : 20+l])
 			fmt.Println("register successful device temp id:", tmpId)
 
+			log.Println("report category")
 			ctx.Write(reportCategory(msg[21 : 20+l]))
 
 		}
@@ -69,7 +71,6 @@ func (userRegisterResponse) Execute(ctx netty.InboundContext, message netty.Mess
 }
 
 var category [28]byte
-
 
 //logicType     uint8 // 21 类型  --console2 --车0 - 台驾1  3 monitor
 //category      uint8 //20  能力
@@ -83,9 +84,12 @@ func reportCategory(tepid []byte) []byte {
 
 	binary.BigEndian.PutUint32(msg[LenIndex:LenIndex+4], uint32(len(tepid)))
 
+	packet := make([]byte, len(tepid))
+	copy(packet, tepid)
+
 	msg[20] = 0
 
 	msg[21] = 2
-	return append(msg, tepid...)
+	return append(msg, packet...)
 
 }

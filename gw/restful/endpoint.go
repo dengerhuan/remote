@@ -12,8 +12,8 @@ func init() {
 	GlobalBus.SubscribeAsync("erd:apply", func(data map[string]interface{}) {
 		log.Println(data)
 		//
-		//ErdApplyReq(data)
-		//ErdApplyAck(data)
+		ErdApplyReq(data)
+		ErdApplyAck(data)
 
 	}, false)
 }

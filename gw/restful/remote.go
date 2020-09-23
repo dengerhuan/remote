@@ -11,10 +11,14 @@ import (
 	"time"
 )
 
-var remoteAdd = "http://192.168.100.249:8096"
+var remoteAdd = "http://bdpprodgateway.ced242a1c52a74a6d8ad973d7a195bee5.cn-shanghai.alicontainer.com/rnm-dataplatform-mec"
+
+//var remoteAdd = "http://192.168.100.249:8096"
 
 // application/json
 func Post(url string, data interface{}, contentType string) (res gin.H) {
+
+	log.Println("post")
 	// 超时时间：5秒
 	client := &http.Client{Timeout: 5 * time.Second}
 	jsonStr, _ := json.Marshal(data)
@@ -22,12 +26,13 @@ func Post(url string, data interface{}, contentType string) (res gin.H) {
 	if err != nil {
 		//panic(err)
 		log.Println(err)
+	} else {
+		defer resp.Body.Close()
 	}
-	defer resp.Body.Close()
 
 	result, _ := ioutil.ReadAll(resp.Body)
 
-	fmt.Println(result)
+	log.Println(result)
 	json.Unmarshal(result, &res)
 	return res
 }

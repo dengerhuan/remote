@@ -13,7 +13,14 @@ type erdApply struct {
 // get msg from cockpit redirect to vehicle and console
 func (d erdApply) Execute(ctx netty.InboundContext, message netty.Message) {
 
+
+	log.Println(message)
+
+
 	msg := message.([]byte)
+
+	packet := make([]byte, len(msg))
+	copy(packet, msg)
 
 	var payload H
 
@@ -47,9 +54,10 @@ func (d erdApply) Execute(ctx netty.InboundContext, message netty.Message) {
 			"orderId":   orderId,
 		}
 
-		order.GetConsole().Send(msg)
-		order.GetVehicle().Send(msg)
+		order.GetConsole().Send(packet)
+		order.GetVehicle().Send(packet)
 
+		log.Println("redirect erd apply to car and console")
 
 		//
 		//vg := order.GetVehicle().GetVg()

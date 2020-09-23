@@ -47,6 +47,19 @@ func (l *logicGroup) Register(logic *RdLogic) {
 	log.Println("device detail info ", logic)
 }
 
+func (l *logicGroup) ReleaseOne(carId string) error {
+	l.mutex.RLock()
+	defer l.mutex.RUnlock()
+
+	logic, ok := l.list[carId]
+
+	if ok {
+		logic.vg = make([]*RdLogic, 0)
+		logic.Unlock()
+	}
+	return nil
+}
+
 func (l *logicGroup) GetById(carId string) (*RdLogic, error) {
 	l.mutex.RLock()
 	defer l.mutex.RUnlock()

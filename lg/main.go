@@ -6,6 +6,7 @@ import (
 	"github.com/go-netty/go-netty/codec/frame"
 	"github.com/go-netty/go-netty/utils"
 	"lg/authz"
+	_ "lg/media"
 	"lg/netty/transport/udp"
 	"lg/protoc"
 	"log"
@@ -88,11 +89,7 @@ func (exHandler) HandleException(ctx netty.ExceptionContext, ex netty.Exception)
 	log.Println(ex)
 
 	if strings.Contains(ex.Error(), "connection refused") {
-
 		ctx.Close(nil)
-
-		//
-		//ctx.Channel().Close()
 		fmt.Println("connection error ,reconnect after 2s")
 		time.Sleep(time.Second * 2)
 		AfterInit()

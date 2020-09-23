@@ -35,7 +35,6 @@ func main() {
 
 	boot.Action(netty.WaitSignal(os.Interrupt, os.Kill))
 	//------
-
 }
 
 // 断链 重连

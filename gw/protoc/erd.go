@@ -32,6 +32,9 @@ type erdStop struct {
 
 func (d erdStop) Execute(ctx netty.InboundContext, message netty.Message) {
 	log.Println("erd stop receive from server")
+
+	log.Println()
+
 	msg := message.([]byte)
 	var payload H
 	_, l, codec := DecodeHead(msg)

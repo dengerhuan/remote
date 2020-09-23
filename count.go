@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"os/exec"
 	"strings"
 	"sync"
 )
@@ -23,6 +24,22 @@ var (
 )
 
 func main() {
+
+
+	cmd := exec.Command("ffmpeg",
+		"-f", "avfoundation",
+		"-i", "1",
+		"-vcodec", "libx264",
+		"-preset", "ultrafast",
+		"-acodec", "libfaac",
+		"-f", "flv", "rtmp://video.nissanchina.cn/mec/456")
+
+	cmd.Stdin = os.Stdin
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+
+	cmd.Run()
+
 	argsLen := len(os.Args)
 	fmt.Println("argsLen:", argsLen)
 	if argsLen == 2 {

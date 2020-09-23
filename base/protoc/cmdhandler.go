@@ -14,8 +14,6 @@ func (CmdHandler) HandleRead(ctx netty.InboundContext, message netty.Message) {
 	// check if this is a  cmd
 	//fmt.Println("cmd handler read")
 
-
-
 	msg := message.([]byte)
 	if len(msg) < 16 {
 		return
@@ -33,9 +31,7 @@ func (CmdHandler) HandleRead(ctx netty.InboundContext, message netty.Message) {
 		}
 
 	case 1:
-
 		ctx.HandleRead(msg)
-
 	default:
 		fmt.Println("unsupport ")
 	}

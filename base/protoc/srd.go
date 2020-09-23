@@ -199,6 +199,7 @@ func (d srdStart) Execute(ctx netty.InboundContext, message netty.Message) {
 
 			order.Start()
 			order.GetVehicle().Send(msg)
+			order.GetCockpit().Send(msg)
 			c.RenderJson(c.CmdHead(3, 3),
 				H{"result": true,
 					"cause":     "",
@@ -209,7 +210,6 @@ func (d srdStart) Execute(ctx netty.InboundContext, message netty.Message) {
 		} else {
 
 			order.Stop()
-			order.GetVehicle().Send(msg)
 			c.RenderJson(c.CmdHead(3, 3),
 				H{"result": false,
 					"cause":     "用户取消",
@@ -219,5 +219,4 @@ func (d srdStart) Execute(ctx netty.InboundContext, message netty.Message) {
 
 		}
 	}
-
 }

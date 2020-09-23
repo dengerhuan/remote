@@ -129,10 +129,6 @@ func (u *udpFactory) mainLoop() {
 		}
 
 		trans, ok := u.transports[raddr.String()]
-		////fmt.Println("sss", trans)
-		//if ok {
-		//	fmt.Println(trans.RemoteAddr())
-		//}
 
 		if !ok {
 			trans = newUDPServerTransport(u.listener, raddr)

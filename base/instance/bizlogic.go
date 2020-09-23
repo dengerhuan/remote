@@ -17,16 +17,13 @@ type RdLogic struct {
 	lastWriteTime int64
 	handlerCtx    netty.HandlerContext
 	id            string
-
-	adminState bool
-	rdState    bool
-
-	state uint8 //  status 0 unlock  1 lock  2 working
-
-	initAttach bool
-	logicType  uint8 // 21 类型  --console 2 --车 0 - 台驾--1
-	category   uint8 //20  能力
-	vg         []*RdLogic
+	adminState    bool
+	rdState       bool
+	state         uint8 //  status 0 unlock  1 lock  2 working
+	initAttach    bool
+	logicType     uint8 // 21 类型  --console 2 --车 0 - 台驾--1
+	category      uint8 //20  能力
+	vg            []*RdLogic
 }
 
 func (s *RdLogic) Ctx() netty.HandlerContext {
@@ -55,14 +52,13 @@ func (s *RdLogic) Acquire() bool {
 		s.state = 1
 		return true
 	}
-
 	return false
-
 }
 
 func (s *RdLogic) SetState(state uint8) {
 	s.state = state
 }
+
 func (s *RdLogic) Send(msg netty.Message) {
 	s.mutex.Lock()
 	s.handlerCtx.Write(msg)
@@ -103,6 +99,7 @@ func (s *RdLogic) setCategory(message netty.Message) error {
 
 func (s *RdLogic) HandleActive(ctx netty.ActiveContext) {
 	log.Println("log active")
+	s.initAttach = false
 	s.handlerCtx = ctx
 	ctx.HandleActive()
 }
@@ -125,6 +122,7 @@ func (s *RdLogic) HandleRead(ctx netty.InboundContext, message netty.Message) {
 			s.Broadcast(packet)
 		}
 	case 3:
+		log.Println("report category")
 		err := s.setCategory(message)
 		if nil != err {
 			log.Println(err)
@@ -159,48 +157,6 @@ func (s *RdLogic) BroadcastIf(message netty.Message, fn func(logic *RdLogic) boo
 		}
 	}
 }
-
-//if msg[9] == 1 {
-//	//fmt.Println(msg)
-//	s.Broadcast(msg)
-//} else {
-//
-//	var payload map[string]interface{}
-//
-//	_, l, _ := DDecodeHead(msg)
-//
-//	err := json.Unmarshal(msg[20:20+l], &payload)
-//
-//	//fmt.Println(err)
-//	//
-//	//fmt.Println(payload)
-//	//	stat
-//	//	stat := H{"status": []map{}{carStat}, "time": time.Now().UnixNano() / 1e6}
-//
-//	status := payload["status"].([]interface{})
-//	for _, _statu := range status {
-//		statu := _statu.(map[string]interface{})
-//		statu["carId"] = s.id
-//
-//	}
-//
-//	jsonBytes, err := json.Marshal(map[string]interface{}{
-//		"status": status,
-//	})
-//	if err != nil {
-//		return
-//	}
-//
-//	h := make([]byte, 20)
-//	copy(h, msg[0:20])
-//	binary.BigEndian.PutUint32(h[12:16], uint32(len(jsonBytes)))
-//
-//	s.Broadcast(append(h, jsonBytes...))
-//
-//}
-
-//log.Println("-------------")
-//}
 
 func DDecodeHead(msg []byte) (uint8, uint32, uint8) {
 	flag := msg[10]
