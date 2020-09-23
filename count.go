@@ -25,7 +25,6 @@ var (
 
 func main() {
 
-
 	cmd := exec.Command("ffmpeg",
 		"-f", "avfoundation",
 		"-i", "1",

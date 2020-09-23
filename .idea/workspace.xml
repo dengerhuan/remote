@@ -2,24 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d279672-0b53-45f8-8593-5ae94be89ce8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lg/eventbus/api.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lg/eventbus/bus.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lg/eventbus/client.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lg/eventbus/net.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lg/eventbus/readme" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lg/eventbus/server.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lg/media/rtmp.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/client/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/count.go" beforeDir="false" afterPath="$PROJECT_DIR$/count.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gw/gw" beforeDir="false" afterPath="$PROJECT_DIR$/gw/gw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gw/protoc/erd.go" beforeDir="false" afterPath="$PROJECT_DIR$/gw/protoc/erd.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gw/protoc/operationcmdfactory.go" beforeDir="false" afterPath="$PROJECT_DIR$/gw/protoc/operationcmdfactory.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gw/protoc/usercmdfactory.go" beforeDir="false" afterPath="$PROJECT_DIR$/gw/protoc/usercmdfactory.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gw/restful/endpoint.go" beforeDir="false" afterPath="$PROJECT_DIR$/gw/restful/endpoint.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gw/restful/remote.go" beforeDir="false" afterPath="$PROJECT_DIR$/gw/restful/remote.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lg/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/lg/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lg/protoc/operationfactory.go" beforeDir="false" afterPath="$PROJECT_DIR$/lg/protoc/operationfactory.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +55,7 @@
       <recent name="$PROJECT_DIR$/cliet/rpc" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build client">
+  <component name="RunManager" selected="Go Build.go build lg">
     <configuration name="go build client" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="remote" />
       <working_directory value="$PROJECT_DIR$/client" />
@@ -136,22 +121,22 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="418" y="122" key="#go_build_client/0.23.1440.877@0.23.1440.877" timestamp="1600745635315" />
-    <state width="1398" height="231" key="GridCell.Tab.0.bottom" timestamp="1600839619085">
+    <state width="1398" height="513" key="GridCell.Tab.0.bottom" timestamp="1600848950355">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="231" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1600839619085" />
-    <state width="1398" height="231" key="GridCell.Tab.0.center" timestamp="1600839619084">
+    <state width="1398" height="513" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1600848950355" />
+    <state width="1398" height="513" key="GridCell.Tab.0.center" timestamp="1600848950354">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="231" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1600839619084" />
-    <state width="1398" height="231" key="GridCell.Tab.0.left" timestamp="1600839619083">
+    <state width="1398" height="513" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1600848950354" />
+    <state width="1398" height="513" key="GridCell.Tab.0.left" timestamp="1600848950354">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="231" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1600839619083" />
-    <state width="1398" height="231" key="GridCell.Tab.0.right" timestamp="1600839619084">
+    <state width="1398" height="513" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1600848950354" />
+    <state width="1398" height="513" key="GridCell.Tab.0.right" timestamp="1600848950355">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="231" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1600839619084" />
+    <state width="1398" height="513" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1600848950355" />
     <state x="402" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1600742796566">
       <screen x="0" y="23" width="1440" height="877" />
     </state>

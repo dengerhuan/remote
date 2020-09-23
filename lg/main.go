@@ -11,7 +11,6 @@ import (
 	"lg/protoc"
 	"log"
 	"os"
-	"strings"
 	"time"
 )
 
@@ -88,10 +87,9 @@ func (exHandler) HandleException(ctx netty.ExceptionContext, ex netty.Exception)
 
 	log.Println(ex)
 
-	if strings.Contains(ex.Error(), "connection refused") {
-		ctx.Close(nil)
-		fmt.Println("connection error ,reconnect after 2s")
-		time.Sleep(time.Second * 2)
-		AfterInit()
-	}
+	ctx.Close(nil)
+	fmt.Println("connection error ,reconnect after 2s")
+	time.Sleep(time.Second * 2)
+	AfterInit()
+
 }
