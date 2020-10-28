@@ -6,7 +6,7 @@ import (
 	"github.com/go-netty/go-netty/codec/frame"
 	"github.com/go-netty/go-netty/utils"
 	"lg/authz"
-	_ "lg/media"
+	//_ "lg/media"
 	"lg/netty/transport/udp"
 	"lg/protoc"
 	"log"

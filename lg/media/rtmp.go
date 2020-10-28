@@ -36,7 +36,7 @@ func init() {
 			"-f", "avfoundation",
 			"-i", "1",
 			"-vcodec", "libx264",
-			"-s", "1280x720",
+			"-s", "800x480",
 			"-preset", "ultrafast",
 			"-acodec", "libfaac",
 			"-f", "flv", "rtmp://video.nissanchina.cn/mec/"+id)
