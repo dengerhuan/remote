@@ -3,8 +3,8 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"math"
 	"os"
-	"os/exec"
 	"strings"
 	"sync"
 )
@@ -25,34 +25,41 @@ var (
 
 func main() {
 
-	cmd := exec.Command("ffmpeg",
-		"-f", "avfoundation",
-		"-i", "1",
-		"-vcodec", "libx264",
-		"-preset", "ultrafast",
-		"-acodec", "libfaac",
-		"-f", "flv", "rtmp://video.nissanchina.cn/mec/456")
+	fmt.Println(float32(5) / 3)
 
-	cmd.Stdin = os.Stdin
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
+	fmt.Println(int8(math.Floor(float64(5)/3 + 0.5)))
 
-	cmd.Run()
+	fmt.Println(float32(5) / 3)
 
-	argsLen := len(os.Args)
-	fmt.Println("argsLen:", argsLen)
-	if argsLen == 2 {
-		rootPath = os.Args[1]
-	} else if argsLen == 3 {
-		rootPath = os.Args[1]
-		suffixname = os.Args[2]
-	}
-	// sync chan using for waiting
-	done := make(chan bool)
-	go codeLineSum(rootPath, done)
-	<-done
-
-	fmt.Println("total line:", linesum)
+	//fmt.Printf("%x", -4700)
+	////cmd := exec.Command("ffmpeg",
+	////	"-f", "avfoundation",
+	////	"-i", "1",
+	////	"-vcodec", "libx264",
+	////	"-preset", "ultrafast",
+	////	"-acodec", "libfaac",
+	////	"-f", "flv", "rtmp://video.nissanchina.cn/mec/456")
+	//
+	//cmd.Stdin = os.Stdin
+	//cmd.Stdout = os.Stdout
+	//cmd.Stderr = os.Stderr
+	//
+	//cmd.Run()
+	//
+	//argsLen := len(os.Args)
+	//fmt.Println("argsLen:", argsLen)
+	//if argsLen == 2 {
+	//	rootPath = os.Args[1]
+	//} else if argsLen == 3 {
+	//	rootPath = os.Args[1]
+	//	suffixname = os.Args[2]
+	//}
+	//// sync chan using for waiting
+	//done := make(chan bool)
+	//go codeLineSum(rootPath, done)
+	//<-done
+	//
+	//fmt.Println("total line:", linesum)
 }
 
 // compute souce file line number

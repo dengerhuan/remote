@@ -29,12 +29,14 @@ func UDP() {
 			AddLast(session.SessionManagerInst,
 				protoc.CmdHandler{},
 				&authz.RegisterHandler{Authenticated: false},
+				//
 				&instance.RdLogic{IdleTime: time.Second * 2}, exHandler{}, )
 	}
 
 	// new go-netty bootstrap
 	biit := netty.NewBootstrap().
 		// configure the child pipeline initializer
+		//
 		ChildInitializer(childPipelineInitializer).
 		// configure the transport protocol
 		Transport(udp.New()).

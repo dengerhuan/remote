@@ -69,6 +69,7 @@ type srdStart struct {
 }
 
 func (d srdStart) Execute(ctx netty.InboundContext, message netty.Message) {
+
 	log.Println("srd start")
 
 	msg := message.([]byte)

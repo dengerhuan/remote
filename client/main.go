@@ -1,11 +1,12 @@
 package main
 
 import (
-	"client/.idea/netty/transport/udp"
 	"client/authz"
 	"client/instance"
+	"client/netty/transport/udp"
 	"client/protoc"
 	"client/sys/ntp"
+	"client/vp"
 	"fmt"
 	"github.com/go-netty/go-netty"
 	"github.com/go-netty/go-netty/codec/frame"
@@ -21,17 +22,19 @@ var boot = netty.NewBootstrap().Transport(udp.New())
 
 func main() {
 	log.SetFlags(log.Ldate | log.Llongfile)
+
 	boot.ClientInitializer(func(channel netty.Channel) {
 		channel.Pipeline().
 			AddLast(frame.PacketCodec(1024*6),
 				exHandler{},
-
 				protoc.CmdHandler{},
 				instance.MsgHandler{},
 			)
 	})
 
 	AfterInit()
+
+	vp.VpInstall()
 
 	boot.Action(netty.WaitSignal(os.Interrupt, os.Kill))
 	//------
@@ -40,7 +43,7 @@ func main() {
 // 断链 重连
 func AfterInit() {
 
-	con, err := boot.Connect("47.105.169.160:9090", nil)
+	con, err := boot.Connect("127.0.0.1:9090", nil)
 
 	if err != nil {
 		fmt.Println(err)

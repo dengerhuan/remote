@@ -50,7 +50,7 @@ func main() {
 // 断链 重连
 func AfterInit() {
 
-	con, err := boot.Connect("47.105.169.160:9090", nil)
+	con, err := boot.Connect("127.0.0.1:9090", nil)
 
 	//con, err := boot.Connect("0.0.0.0:9090", nil)
 

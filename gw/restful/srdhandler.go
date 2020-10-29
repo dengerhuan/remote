@@ -23,6 +23,8 @@ func SrdApply(c *gin.Context) {
 
 	NewEvent(topic, body).Listen(NextFunc(func(e *Event) {
 
+
+		//
 		GlobalBus.SubscribeOnce(topic, func(ee interface{}) {
 			log.Println("srd apply endpoint handler over")
 			log.Println(ee)

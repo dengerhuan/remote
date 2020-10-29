@@ -48,6 +48,8 @@ func (d NetTimeStamp) Execute(ctx netty.InboundContext, message netty.Message) {
 
 		r := binary.BigEndian.Uint64(msg[20:28])
 		binary.BigEndian.PutUint32(ntp[LenIndex:LenIndex+4], 32)
+
+
 		binary.BigEndian.PutUint64(ntp[20:28], r)
 		binary.BigEndian.PutUint64(ntp[28:36], uint64(time.Now().UnixNano()))
 		binary.BigEndian.PutUint64(ntp[36:44], uint64(time.Now().UnixNano()))

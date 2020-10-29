@@ -4,7 +4,7 @@ import (
 	_ "base/env"
 	//"base/log"
 	"base/rpc"
-	_ "github.com/astaxie/beego"
+	//_ "github.com/astaxie/beego"
 	"log"
 )
 

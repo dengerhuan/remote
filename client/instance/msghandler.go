@@ -2,6 +2,7 @@ package instance
 
 import (
 	"client/drivemanager"
+	. "client/eventbus"
 	"client/protoc"
 	"encoding/binary"
 	"github.com/go-netty/go-netty"
@@ -32,6 +33,8 @@ func (MsgHandler) HandleRead(ctx netty.InboundContext, message netty.Message) {
 		_, _, c := protoc.DecodeHead(msg)
 		if c == 1 {
 
+			// publish all message to can
+			GlobalBus.Publish("cmd", message)
 			//log.Println(msg[20:])
 			drivemanager.ReadCommand(msg[20:])
 
