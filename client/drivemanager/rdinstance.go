@@ -11,7 +11,6 @@ var StartTime int64
 var CarId string
 
 func GetTime() int64 {
-
 	return time.Now().UnixNano()/1e9 - StartTime
 }
 

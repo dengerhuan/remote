@@ -6,7 +6,6 @@ import (
 	"client/netty/transport/udp"
 	"client/protoc"
 	"client/sys/ntp"
-	"client/vp"
 	"fmt"
 	"github.com/go-netty/go-netty"
 	"github.com/go-netty/go-netty/codec/frame"
@@ -34,7 +33,7 @@ func main() {
 
 	AfterInit()
 
-	vp.VpInstall()
+	//vp.VpInstall()
 
 	boot.Action(netty.WaitSignal(os.Interrupt, os.Kill))
 	//------
