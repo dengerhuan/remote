@@ -18,7 +18,7 @@ func init() {
 	/*(
 
 	cmd := exec.Command("ffmpeg",
-	"-f", "avfoundation",
+	"-f", "avfoundation"
 	"-i", "1",
 	"-vcodec", "libx264",
 	"-preset", "ultrafast",

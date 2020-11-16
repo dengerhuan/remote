@@ -42,6 +42,7 @@ func Mock(channel netty.Channel) {
 				command[2] = byte(gas)
 				command[3] = byte(brake)
 				command[4] = byte(math.Pow(2, float64(gear)))
+				command[5] = 1
 
 				c.RenderBin(c.MsgHead(2, 0), command)
 
