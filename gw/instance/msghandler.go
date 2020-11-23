@@ -3,7 +3,10 @@ package instance
 import (
 	"encoding/json"
 	"github.com/go-netty/go-netty"
+	"gw/mq"
 	"log"
+	"strconv"
+	"time"
 )
 
 type MsgHandler struct {
@@ -21,15 +24,16 @@ func (m MsgHandler) HandleRead(ctx netty.InboundContext, message netty.Message) 
 	case 1:
 
 		//var payload map[string]interface{}
-		//
-		//if msg[9] == 0 {
-		//
-		//	err := mq.Produce("rdstat", strconv.FormatInt(time.Now().UnixNano()/1e6, 10), msg[20:])
-		//	log.Println(err)
-		//} else {
-		//	err := mq.Produce("rdlog", strconv.FormatInt(time.Now().UnixNano()/1e6, 10), msg[20:])
-		//	log.Println(err)
-		//}
+
+		if msg[9] == 0 {
+
+			err := mq.Produce("rdstat", strconv.FormatInt(time.Now().UnixNano()/1e6, 10), msg[20:])
+
+			log.Println(err)
+		} else {
+			err := mq.Produce("rdlog", strconv.FormatInt(time.Now().UnixNano()/1e6, 10), msg[20:])
+			log.Println(err)
+		}
 		//json.Unmarshal(msg[20:], &payload)
 		//
 		//log.Println(payload)

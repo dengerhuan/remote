@@ -241,6 +241,8 @@ func goThrottle(throttle uint16) []byte {
 // read can state
 func read(conn *net.UDPConn) {
 
+
+
 	buf := make([]byte, 13)
 	for {
 		_, err := conn.Read(buf)

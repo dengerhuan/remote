@@ -56,7 +56,7 @@ func init() {
 	if err != nil {
 		msg := fmt.Sprintf("Kafak producer create fail. err: %v", err)
 		fmt.Println(msg)
-		panic(msg)
+		//panic(msg)
 	}
 	//mqConfig.Producer.Return.Successes = false
 	//AsyncProducer, err = sarama.NewAsyncProducer(cfg.Servers, mqConfig)

@@ -1,8 +1,8 @@
 {
   "topics": ["XXX"],
-  "servers": ["47.101.200.117:9093","47.101.200.42:909","47.101.199.166:9093"],
-  "username": "alikafka_pre-cn-v0h1l8k6000a",
-  "password": "Ytykt3FhuLPRfI6LRKlDu6Cf4Yor2VMg",
+  "servers": ["139.196.223.77:9093","139.196.221.72:9093","139.196.223.97:9093"],
+  "username": "mec",
+  "password": "ORbqjxvQ2T^S*6ka",
   "consumerGroup": "XXX",
   "cert_file": "ca-cert"
 }

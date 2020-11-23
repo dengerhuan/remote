@@ -53,11 +53,11 @@ func ErdApplyAck(data map[string]interface{}) {
 	req := gin.H{"orderId": data["orderId"].(string),
 		"distance":  37.3,
 		"time":      53,
-		"latitude":  125.3249352,
-		"longitude": 43.8593245,
+		"latitude":  43.8593245,
+		"longitude": 125.3249352,
 		"direction": 37.3,
-		"cause":     "用户强制结束",
-		"causeCode": 222}
+		"cause":     "用户请求结束",
+		"causeCode": 220}
 
 	res := Post(remoteAdd+"/erd/ack", req, "application/json")
 
